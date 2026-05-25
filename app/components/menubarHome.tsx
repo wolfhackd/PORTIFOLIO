@@ -5,7 +5,7 @@ import { MenuModal } from './menuModal';
 const MenubarHome = () => {
   return (
     <div className="backdrop-blur-sm from-gray-900 via-gray-800 to-transparent flex p-4 fixed z-5000 justify-between w-full">
-      <nav className="bg-[#000000]  self-center p-0">
+      <nav className="  self-center p-0">
         <Link to="/">
           <Button
             variant="link"
