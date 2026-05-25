@@ -6,7 +6,7 @@ export const list = [
       'O Let Me Ask é um app de perguntas e respostas em tempo real para lives e eventos, onde os participantes podem enviar questões, votar nas mais relevantes e acompanhar se já foram respondidas. A proposta é organizar a participação do público, promovendo engajamento e clareza na comunicação.',
     images: ['letmeaskone_rpozj7', 'letmeasktwo_eocun2'],
     link: 'https://github.com/wolfhackd/let-me-ask',
-    // created: '2025-11-19T12:12:56.979',
+    created: '2025-11-19T12:12:56.979',
     fastDescription:
       'App de perguntas e respostas em tempo real para eventos e transmissões ao vivo.',
     overview:
@@ -19,7 +19,7 @@ export const list = [
       'Website de música inspirado no Spotify, que permite ao usuário navegar entre playlists, ouvir prévias de faixas e explorar artistas e álbuns.',
     images: ['spotify2_crffkm', 'spotify_ys7twn', 'spotify3_sdg1sl'],
     link: 'https://github.com/wolfhackd/Spotify-Project',
-    // created: '2025-02-22T12:57:44',
+    created: '2025-02-22T12:57:44',
     fastDescription:
       'Clone funcional do Spotify com navegação fluida e foco em UX e performance.\n',
     overview:
@@ -32,7 +32,7 @@ export const list = [
       'O PortuGênio é um projeto web voltado para o ensino e aprimoramento da língua portuguesa, com foco inicial na gramática. A plataforma utiliza inteligência artificial para oferecer correções automáticas, explicações personalizadas e exemplos práticos, tornando o aprendizado mais dinâmico e interativo.',
     images: [],
     link: 'https://github.com/wolfhackd/PortuGenio',
-    // created: '2025-11-19T12:16:40.891',
+    created: '2025-11-19T12:16:40.891',
     fastDescription:
       'Plataforma inteligente para aprendizado de gramática com correções automáticas e explicações personalizadas.',
     overview:

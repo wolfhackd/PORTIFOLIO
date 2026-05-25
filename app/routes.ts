@@ -1,3 +1,7 @@
 import { type RouteConfig, index, route } from "@react-router/dev/routes";
 
-export default [index("routes/main.tsx"), route("inProgress", "routes/inProgress.tsx")] satisfies RouteConfig;
+export default [
+    index("routes/MainRoute.tsx"),
+    route("inProgress", "routes/InProgressRoute.tsx"),
+    route("projeto/:id", "routes/ProjectRoute.tsx"),
+] satisfies RouteConfig;

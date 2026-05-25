@@ -1,10 +1,10 @@
 import MenubarHome from "~/components/menubarHome";
-import { HeroSection } from "./Hero";
 import { Toaster } from 'sonner';
 import { AboutMe } from "./aboutMe";
 import Technologies from "./technologies";
 import { ProjectsSection } from "./projectSection";
 import FooterSection from "~/components/footerSection";
+import { HeroSection } from "./Hero";
 
 export const MainPage = () => {
     return (

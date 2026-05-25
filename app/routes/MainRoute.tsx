@@ -1,4 +1,6 @@
-import { MainPage } from "../pages/main/mainPage";
+import { MainPage } from "~/pages/main/MainPage";
+
+
 
 export function meta() {
   return [
@@ -7,6 +9,6 @@ export function meta() {
   ];
 }
 
-export default function Home() {
+export default function MainRoute() {
   return <MainPage />;
 }
