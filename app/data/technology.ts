@@ -1,4 +1,4 @@
-const list = [
+export const list = [
   {
     id: '17c897e3-e680-41f6-9d66-d4b8fbc72669',
     name: 'Sequelize',
@@ -280,5 +280,3 @@ const list = [
     categoryId: '8884e69a-b12f-4f1b-b35d-fa22cbce0668',
   },
 ];
-
-export default list;

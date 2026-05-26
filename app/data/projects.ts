@@ -11,6 +11,7 @@ export const list = [
       'App de perguntas e respostas em tempo real para eventos e transmissões ao vivo.',
     overview:
       'O projeto Let Me Ask foi desenvolvido para modernizar a interação em lives, eventos e conferências, tornando o processo de perguntas mais simples e democrático. A aplicação é totalmente responsiva, conta com autenticação via Google e integrações em tempo real via WebSocket.',
+    
   },
   {
     id: 'd0a3473e-7a24-4683-a85c-ad5695409535',

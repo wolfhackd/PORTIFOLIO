@@ -11,4 +11,5 @@ export type Project = {
     fastDescription: string;
     overview: string;
     technologies?: Technology[];
+    github?: string;
 }
