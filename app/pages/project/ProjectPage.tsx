@@ -1,6 +1,6 @@
 
 import { useParams } from "react-router";
-import { Badge } from "~/components/ui/badge";
+import { motion } from 'motion/react';
 import FooterSection from "~/components/footerSection";
 import { ImageCloud } from "~/service/ImageCloud";
 import MenubarHome from "~/components/menubarHome";
@@ -8,7 +8,6 @@ import { dateFormatter } from "~/utils/dateFormatter";
 
 import { list as ProjectList }  from "~/data/projects";
 import type { Project } from "~/types/project";
-import type { Technology } from "~/types/technology";
 
 const ProjectPage = () => {
   const { id } = useParams<{ id: string }>();
@@ -16,43 +15,99 @@ const ProjectPage = () => {
   const project = ProjectList.find((p: Project) => p.id === id) as Project | undefined;
 
   if (!project) {
-    return <h1>Projeto não encontrado</h1>;
+    return (
+      <>
+        <MenubarHome />
+        <section className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-gray-950 text-white py-40 px-8 flex items-center justify-center">
+          <h1 className="text-4xl font-bold text-gray-400">Projeto não encontrado</h1>
+        </section>
+        <FooterSection />
+      </>
+    );
   }
-//   const handleClick = () => {
-//     window.open(project?.link, "_blank");
-//   };
 
   return (
     <>
       <MenubarHome />
-      <div className="relative pt-32 px-6 lg:px-24 pb-16 text-[#EEF4ED] bg-gradient-to-b from-[#31487a] to-[#1e2b4f] poppins-medium flex flex-col items-center w-auto">
-        <h2 className="text-5xl font-bold">{project?.title}</h2>
+      <section className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-gray-950 text-white py-20 px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          className="max-w-5xl mx-auto"
+        >
+          <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-4">
+            {project?.title}
+          </h1>
 
-        <div className="w-1/2 h-1/2 mx-auto rounded-2xl overflow-hidden bg-black/20 mt-8">
-          <ImageCloud image={project?.images?.[0] ?? "cld-sample"} />
-        </div>
+          <p className="text-gray-400 text-sm mb-6">
+            Postado em: {dateFormatter(project?.created ?? "")}
+          </p>
 
-        <p className="text-muted-foreground">
-          Postado em: {dateFormatter(project?.created ?? "")}
-        </p>
-
-        <p className="mt-4">{project?.fastDescription}</p>
-
-        <h2>Detalhes</h2>
-        <div className="flex">
-          <p>{project?.description}</p>
-          <div>
-            <h3>Tecnologias utilizadas</h3>
-            <div>
-              {project.technologies?.map((tech: Technology) => (
-                <Badge key={tech.id}>{tech.name}</Badge>
-              ))}
-            </div>
+          <div className="rounded-2xl overflow-hidden bg-gray-900 border border-gray-800 shadow-lg mb-12">
+            <ImageCloud image={project?.images?.[0] ?? "cld-sample"} />
           </div>
-        </div>
-      </div>
 
-      {/* Footer */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-12">
+            <div className="lg:col-span-2">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
+                <h2 className="text-2xl font-semibold text-cyan-400 mb-4">Resumo</h2>
+                <p className="text-gray-300 leading-relaxed mb-8">
+                  {project?.fastDescription}
+                </p>
+
+                <h2 className="text-2xl font-semibold text-cyan-400 mb-4">Descrição Completa</h2>
+                <p className="text-gray-300 leading-relaxed">
+                  {project?.description}
+                </p>
+              </motion.div>
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="lg:col-span-1"
+            >
+              <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6">
+                <h3 className="text-xl font-semibold text-cyan-400 mb-6">Tecnologias</h3>
+                <div className="flex flex-wrap gap-4">
+                  {(project.technologies ?? []).map((tech, i) => {
+                    const icon = tech?.icon;
+                    return icon ? (
+                      <div key={i} className="flex flex-col items-center">
+                        <img
+                          src={`https://cdn.simpleicons.org/${icon}`}
+                          alt={tech.name}
+                          className="size-8 mb-2"
+                          title={tech.name}
+                        />
+                        <span className="text-xs text-gray-400 text-center">{tech.name}</span>
+                      </div>
+                    ) : (
+                      <div
+                        key={i}
+                        className="flex flex-col items-center"
+                        title={tech.name}
+                      >
+                        <div className="size-8 bg-gray-700 rounded flex items-center justify-center text-[10px] text-gray-300 mb-2">
+                          ?
+                        </div>
+                        <span className="text-xs text-gray-400 text-center">{tech.name}</span>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </motion.div>
+      </section>
+
       <FooterSection />
     </>
   );
