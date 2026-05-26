@@ -12,7 +12,7 @@ const ProjectsPage = () => {
   return (
     <>
       <MenubarHome />
-      <section className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-gray-950 text-white py-40 px-8">
+      <section className="min-h-screen bg-linear-to-b from-black via-gray-900 to-gray-950 text-white py-40 px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}

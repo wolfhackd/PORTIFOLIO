@@ -18,7 +18,7 @@ const ProjectPage = () => {
     return (
       <>
         <MenubarHome />
-        <section className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-gray-950 text-white py-40 px-8 flex items-center justify-center">
+        <section className="min-h-screen bg-linear-to-b from-black via-gray-900 to-gray-950 text-white py-40 px-8 flex items-center justify-center">
           <h1 className="text-4xl font-bold text-gray-400">Projeto não encontrado</h1>
         </section>
         <FooterSection />
@@ -29,7 +29,7 @@ const ProjectPage = () => {
   return (
     <>
       <MenubarHome />
-      <section className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-gray-950 text-white py-20 px-8">
+      <section className="min-h-screen bg-linear-to-b from-black via-gray-900 to-gray-950 text-white py-20 px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
