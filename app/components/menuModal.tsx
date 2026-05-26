@@ -43,7 +43,7 @@ export const MenuModal = () => {
                 <div>
                   <p className="font-medium">Home</p>
                   <p className="text-xs text-muted-foreground">
-                    Welcome to my forever work-in-progress!
+                    Bem-vindo ao meu trabalho em andamento!
                   </p>
                 </div>
               </CommandItem>
@@ -63,41 +63,27 @@ export const MenuModal = () => {
                 <div>
                   <p className="font-medium">Blog</p>
                   <p className="text-xs text-muted-foreground">
-                    Thoughts, tutorials, and insights.
+                    Pensamentos, tutoriais e insights.
                   </p>
                 </div>
               </CommandItem>
 
-              <CommandItem>
-                <Mail className="mr-2 h-4 w-4" />
-                <div>
-                  <p className="font-medium">Guestbook</p>
-                  <p className="text-xs text-muted-foreground">Leave a message for me</p>
-                </div>
-              </CommandItem>
-
-              <CommandItem>
-                <LinkIcon className="mr-2 h-4 w-4" />
-                <div>
-                  <p className="font-medium">Links</p>
-                  <p className="text-xs text-muted-foreground">All my links are here</p>
-                </div>
-              </CommandItem>
-
-              <CommandItem>
-                <Info className="mr-2 h-4 w-4" />
-                <div>
-                  <p className="font-medium">About</p>
-                  <p className="text-xs text-muted-foreground">Learn more about me!</p>
-                </div>
-              </CommandItem>
+              <Link to={'/sobre'}>
+                <CommandItem>
+                  <Info className="mr-2 h-4 w-4" />
+                  <div>
+                    <p className="font-medium">Sobre</p>
+                    <p className="text-xs text-muted-foreground">Um pouco sobre mim</p>
+                  </div>
+                </CommandItem>
+              </Link>
 
               <CommandItem>
                 <List className="mr-2 h-4 w-4" />
                 <div>
-                  <p className="font-medium">Bucket List</p>
+                  <p className="font-medium">Lista de desejos</p>
                   <p className="text-xs text-muted-foreground">
-                    Things I want to do at least once in my life
+                    Coisas que quero fazer pelo menos uma vez na minha vida
                   </p>
                 </div>
               </CommandItem>
@@ -105,8 +91,8 @@ export const MenuModal = () => {
               <CommandItem>
                 <Calendar className="mr-2 h-4 w-4" />
                 <div>
-                  <p className="font-medium">Book a Call</p>
-                  <p className="text-xs text-muted-foreground">Schedule some time with me</p>
+                  <p className="font-medium">Agenda</p>
+                  <p className="text-xs text-muted-foreground">Agende um tempo comigo</p>
                 </div>
               </CommandItem>
 

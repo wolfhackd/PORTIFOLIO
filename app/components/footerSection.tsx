@@ -4,12 +4,16 @@ import FooterNav from "./footerNav";
 const FooterSection = () => {
   const geralLinks = [
     { name: 'Home', href: '/' },
-    { name: 'Sobre', href: '/about' },
-    { name: 'Trabalho', href: '/work' },
-    { name: 'Mais', href: '/more' },
+    { name: 'Sobre', href: '/sobre' },
+    { name: 'Projetos', href: '/projetos' },
+    
   ];
-  const aboutMe = [{ name: 'Home', href: '/' }];
-  const letMeTalk = [{ name: 'Home', href: '/' }];
+  const aboutMe = [
+    { name: 'Tecnologias', href: '/' },
+    { name: 'Experiência', href: '/' },
+
+  ];
+  const letMeTalk = [{ name: 'Contato', href: '/contato' }, { name: 'Redes Sociais', href: '/' }];
 
   return (
     <footer className="flex flex-col p-10 justify-between space-y-20 w-full bg-[#13315C] text-[#EEF4ED]">
@@ -19,8 +23,8 @@ const FooterSection = () => {
         </div>
         <div className="flex justify-end space-x-10 ">
           <FooterNav title="Geral" links={geralLinks} />
-          <FooterNav title="Sobre Mim" links={letMeTalk} />
-          <FooterNav title="Vamos Conversar" links={aboutMe} />
+          <FooterNav title="Sobre Mim" links={aboutMe} />
+          <FooterNav title="Vamos Conversar" links={letMeTalk} />
         </div>
       </div>
       <div className="flex justify-between items-center">

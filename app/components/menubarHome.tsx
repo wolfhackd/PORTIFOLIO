@@ -14,8 +14,7 @@ const MenubarHome = () => {
             Home
           </Button>
         </Link>
-        {/* <Link to="/sobre"> */}
-        <Link to="/progress">
+        <Link to="/sobre">
           <Button
             variant="link"
             className="text-white  font-bold hover:bg-[#EEF4ED] hover:text-black  rounded-full  cursor-pointer"
@@ -28,11 +27,11 @@ const MenubarHome = () => {
             variant="link"
             className="text-white  font-bold hover:bg-[#EEF4ED] hover:text-black  rounded-full  cursor-pointer"
           >
-            Trabalho
+            Projetos
           </Button>
         </Link>
         {/* <Link to="/contato"> */}
-        <Link to="/progress">
+        <Link to="/InProgress">
           <Button
             variant="link"
             className="text-black  font-bold bg-[#8DA9C4] hover:bg-[#EEF4ED]  rounded-full cursor-pointer"

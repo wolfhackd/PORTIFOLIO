@@ -5,4 +5,5 @@ export default [
     route("inProgress", "routes/InProgressRoute.tsx"),
     route("projeto/:id", "routes/ProjectRoute.tsx"),
     route("projetos", "routes/ProjectsRoute.tsx"),
+    route("sobre", "routes/AboutMeRoute.tsx"),
 ] satisfies RouteConfig;

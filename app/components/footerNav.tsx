@@ -16,6 +16,7 @@ const FooterNav = ({ title, links }: FooterNavProps) => {
             whileHover="hover"
             initial="initial"
             className="relative transition-colors cursor-pointer"
+            onClick={() => window.location.href = link.href}
           >
             {link.name}
             <motion.span

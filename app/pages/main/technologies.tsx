@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-import list from '../../data/technology'
+import { list as TechnologyList} from '../../data/technology'
 
 export default function Technologies() {
 
@@ -40,7 +40,7 @@ export default function Technologies() {
       </motion.div>
 
       {
-        (list && (
+        (TechnologyList && (
           <div className="overflow-hidden relative py-10">
             <motion.div
               className="flex gap-16 whitespace-nowrap will-change-transform"
@@ -53,7 +53,7 @@ export default function Technologies() {
               }}
               viewport={{ once: true }}
             >
-              {list.map((tech, index) => (
+              {TechnologyList.map((tech, index) => (
                 <div
                   key={`tech-${tech.id}-${index}`}
                   className="flex flex-col items-center justify-center min-w-[120px] hover:scale-110 transition-transform duration-300 poppins-regular"
@@ -69,7 +69,7 @@ export default function Technologies() {
                 </div>
               ))}
 
-              {list.map((tech, index) => (
+              {TechnologyList.map((tech, index) => (
                 <div
                   key={`tech-dup-${tech.id}-${index}`}
                   className="flex flex-col items-center justify-center min-w-[120px] hover:scale-110 transition-transform duration-300 poppins-regular"
