@@ -6,7 +6,7 @@ import { ProjectsSection } from "./projectSection";
 import FooterSection from "~/components/footerSection";
 import { HeroSection } from "./Hero";
 
-export const MainPage = () => {
+export default function MainPage() {
     return (
         <>
          <MenubarHome />
