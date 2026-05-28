@@ -50,17 +50,6 @@ export function ProjectsSection() {
                   {project.fastDescription}
                 </p>
 
-                {/* <div className="flex flex-wrap gap-2 mt-3">
-                  {project.technologies?.slice(0, 4).map((tech, i) => (
-                    <span
-                      key={i}
-                      className="text-xs bg-gray-800 text-gray-300 px-2 py-1 rounded-md"
-                    >
-                      {tech.name}
-                    </span>
-                  ))}
-                </div> */}
-
                 <div className="mt-5 flex justify-between items-center">
                   <Link
                     to={`/projeto/${project.id}`}
