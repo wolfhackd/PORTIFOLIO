@@ -31,5 +31,17 @@ export const projectTechnologiesRelation = [
       '88e9b43f-d59b-4bb6-8883-a5c5fd0036b9', // Zod
       '94899b62-44fe-49dc-986c-cf92a26dcad3', // Drizzle ORM 
     ]
+  },
+  {
+    projectId: 'd6173ccf-b565-4605-9cd8-31asdasdasdas6b8b5f', // PulseChat
+    techIds: [
+      '780e07fb-78c5-4877-9590-0f12900c560f', // TypeScript
+      '71f05733-91ca-4d6c-bc3a-8105f016dd17', // React Router DOM
+      '9dbbec03-4713-4b26-aaee-00bc91b7e904', // Shadcn
+      '28686405-e0ca-4bf9-b38a-d79f190e6563', // Prisma
+      '3a454d8e-7e9e-4342-8288-c2a6b687765a', // PostgreSQL
+      'fbacabbe-533a-4431-8edasdasd6a-ad9fcasdasdade3c1854', // Socket.io
+
+    ]
   }
 ];

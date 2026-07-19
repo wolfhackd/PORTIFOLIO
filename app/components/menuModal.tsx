@@ -38,15 +38,18 @@ export const MenuModal = () => {
             <CommandEmpty>No results found.</CommandEmpty>
 
             <CommandGroup heading="Navigation">
-              <CommandItem>
-                <Home className="mr-2 h-4 w-4" />
-                <div>
-                  <p className="font-medium">Home</p>
-                  <p className="text-xs text-muted-foreground">
-                    Bem-vindo ao meu trabalho em andamento!
-                  </p>
-                </div>
-              </CommandItem>
+
+              <Link to={'/'}>
+                <CommandItem>
+                  <Home className="mr-2 h-4 w-4" />
+                  <div>
+                    <p className="font-medium">Home</p>
+                    <p className="text-xs text-muted-foreground">
+                      Bem-vindo ao meu trabalho em andamento!
+                    </p>
+                  </div>
+                </CommandItem>
+              </Link>
 
               <Link to={'/projetos'}>
                 <CommandItem>
@@ -58,7 +61,7 @@ export const MenuModal = () => {
                 </CommandItem>
               </Link>
 
-              <CommandItem>
+              {/* <CommandItem>
                 <BookText className="mr-2 h-4 w-4" />
                 <div>
                   <p className="font-medium">Blog</p>
@@ -66,7 +69,7 @@ export const MenuModal = () => {
                     Pensamentos, tutoriais e insights.
                   </p>
                 </div>
-              </CommandItem>
+              </CommandItem> */}
 
               <Link to={'/sobre'}>
                 <CommandItem>
@@ -78,7 +81,7 @@ export const MenuModal = () => {
                 </CommandItem>
               </Link>
 
-              <CommandItem>
+              {/* <CommandItem>
                 <List className="mr-2 h-4 w-4" />
                 <div>
                   <p className="font-medium">Lista de desejos</p>
@@ -86,15 +89,15 @@ export const MenuModal = () => {
                     Coisas que quero fazer pelo menos uma vez na minha vida
                   </p>
                 </div>
-              </CommandItem>
+              </CommandItem> */}
 
-              <CommandItem>
+              {/* <CommandItem>
                 <Calendar className="mr-2 h-4 w-4" />
                 <div>
                   <p className="font-medium">Agenda</p>
                   <p className="text-xs text-muted-foreground">Agende um tempo comigo</p>
                 </div>
-              </CommandItem>
+              </CommandItem> */}
 
             </CommandGroup>
 

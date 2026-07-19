@@ -116,7 +116,7 @@ export default function AboutMePage() {
                                 <span className="text-2xl">🎵</span>
                                 <div>
                                     <h3 className="font-semibold text-white mb-2">Músicas para Programar</h3>
-                                    <p className="text-gray-400 text-sm">Sou fã de música eletrônica e lofi para manter o foco durante as sessões de desenvolvimento.</p>
+                                    <p className="text-gray-400 text-sm">Sou fã de música eletrônica e lo-fi para manter o foco durante as sessões de desenvolvimento.</p>
                                 </div>
                             </div>
                             <div className="flex items-start gap-4 p-4 bg-gray-800 bg-opacity-50 rounded-lg hover:bg-opacity-100 transition-all">

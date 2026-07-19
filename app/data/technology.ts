@@ -279,4 +279,11 @@ export const list = [
     icon: 'sqlite',
     categoryId: '8884e69a-b12f-4f1b-b35d-fa22cbce0668',
   },
+  {
+    id: 'fbacabbe-533a-4431-8edasdasd6a-ad9fcasdasdade3c1854',
+    name: 'Socket.io',
+    color: '#010101',
+    icon: 'socketdotio',
+    categoryId: '8884e69a-b12f-4f1b-b35d-fa22cbce0668',
+  },
 ];

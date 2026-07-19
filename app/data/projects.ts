@@ -39,4 +39,17 @@ export const list = [
     overview:
       'Desenvolvido com React, Node e integração com IA, o PortuGênio busca tornar o estudo de português mais acessível e prático. A aplicação fornece feedback em tempo real, análises gramaticais e sugestões de melhoria baseadas em contexto.',
   },
+  {
+    id: 'd6173ccf-b565-4605-9cd8-31asdasdasdas6b8b5f',
+    title: 'PulseChat',
+    description:
+      'O PulseChat é um projeto de chat em tempo real que utiliza WebSocket, podendo conectar vários usuários em uma mesma sala e monitorar quem está presente.',
+    images: ['pulse_1_yuejf5','pulse_2_s6oz2t'],
+    link: 'https://github.com/wolfhackd/Pulse-Chat',
+    created: '2026-06-02T12:16:40.891',
+    fastDescription:
+    'Aplicação de chat em tempo real com autenticação JWT, salas de conversa e comunicação via WebSocket.',
+    overview:
+    'O PulseChat é uma aplicação full stack desenvolvida para explorar comunicação em tempo real utilizando Socket.IO. O projeto conta com autenticação baseada em JWT, gerenciamento de salas, persistência de usuários e mensagens com Prisma e PostgreSQL, além de atualização em tempo real de mensagens, usuários online e indicadores de digitação. A aplicação é dividida em frontend e backend, ambos containerizados com Docker para facilitar a configuração e execução do ambiente.',
+  },
 ];
