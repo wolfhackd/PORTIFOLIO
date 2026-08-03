@@ -155,10 +155,10 @@ export default function AboutMePage() {
                             Se você tem um projeto em mente ou quer conversar sobre desenvolvimento de software, estou pronto para colaborar!
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <button className="px-8 py-3 bg-cyan-400 text-black font-semibold rounded-lg hover:bg-cyan-300 transition-colors">
+                            <button className="px-8 py-3 bg-cyan-400 text-black font-semibold rounded-lg hover:bg-cyan-300 transition-colors" onClick={() => window.location.href = '/'}>
                                 Entre em Contato
                             </button>
-                            <button className="px-8 py-3 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-400 hover:text-black transition-colors">
+                            <button className="px-8 py-3 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-400 hover:text-black transition-colors" onClick={() => window.location.href = '/projetos'}>
                                 Veja Meus Projetos
                             </button>
                         </div>
