@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import MenubarHome from "~/components/menubarHome";
+import TecnologiesGrid from "~/components/TecnologiesGrid";
 import { TimeLineAboutMe } from "~/components/timeLineAboutMe";
 import { list as TechnologyList } from "~/data/technology";
 
@@ -56,45 +57,8 @@ export default function AboutMePage() {
                         <TimeLineAboutMe />
                     </motion.div>
 
-                    {/* <motion.div 
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.3 }}
-                        className="bg-gray-900 border border-gray-800 rounded-2xl p-8 mb-16"
-                    >
-                        <h2 className="text-2xl md:text-3xl font-semibold text-cyan-400 mb-8">Arsenal Técnico</h2>
-                        <div className="flex flex-wrap gap-8 justify-center">
-                            {TechnologyList.map((tech, i) => {
-                                const icon = tech?.icon;
-                                return icon ? (
-                                    <motion.div 
-                                        key={i} 
-                                        className="flex flex-col items-center hover:scale-110 transition-transform duration-300"
-                                        whileHover={{ y: -5 }}
-                                    >
-                                        <img
-                                            src={`https://cdn.simpleicons.org/${icon}`}
-                                            alt={tech.name}
-                                            className="size-10 md:size-12 mb-2 filter hover:brightness-150 transition-all"
-                                            title={tech.name}
-                                        />
-                                        <span className="text-xs md:text-sm text-gray-400 text-center font-medium">{tech.name}</span>
-                                    </motion.div>
-                                ) : (
-                                    <div
-                                        key={i}
-                                        className="flex flex-col items-center"
-                                        title={tech.name}
-                                    >
-                                        <div className="size-10 md:size-12 bg-gradient-to-br from-gray-700 to-gray-800 rounded flex items-center justify-center text-[10px] text-gray-300 mb-2 font-bold">
-                                            ?
-                                        </div>
-                                        <span className="text-xs md:text-sm text-gray-400 text-center font-medium">{tech.name}</span>
-                                    </div>
-                                );
-                            })}
-                        </div>
-                    </motion.div>
+                    <TecnologiesGrid />
+                    {/* 
 
                     <motion.div 
                         initial={{ opacity: 0, y: 20 }}
