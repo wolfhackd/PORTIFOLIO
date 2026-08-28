@@ -1,6 +1,8 @@
 import { motion } from "motion/react";
 import MenubarHome from "~/components/menubarHome";
+import { TimeLineAboutMe } from "~/components/timeLineAboutMe";
 import { list as TechnologyList } from "~/data/technology";
+
 
 export default function AboutMePage() {
     return (
@@ -44,27 +46,17 @@ export default function AboutMePage() {
                         </div>
                     </motion.div>
 
+                    {/* TimeLine */}
                     <motion.div 
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
                         className="bg-gray-900 border border-gray-800 rounded-2xl p-8 mb-16"
                     >
-                        <h2 className="text-2xl md:text-3xl font-semibold text-cyan-400 mb-6">Minha Trajetória</h2>
-                        <div className="space-y-4 text-gray-300 leading-relaxed text-justify text-base md:text-lg">
-                            <p>
-                                <span className="font-semibold text-white">2022:</span> Meu primeiro contato com código. Desenvolvi meu primeiro site com HTML e CSS, momento em que decidi me tornar desenvolvedor. Comecei a estudar por conta própria usando plataformas como YouTube e Udemy.
-                            </p>
-                            <p>
-                                <span className="font-semibold text-white">2023:</span> Mergulhei profundamente na programação e me apaixonei por desenvolvimento back-end. Me matriculei no curso de Análise e Desenvolvimento de Sistemas, onde aprendi diversas linguagens de programação e explorei vários nichos da tecnologia.
-                            </p>
-                            <p>
-                                <span className="font-semibold text-white">2025:</span> Completei meu curso de Análise e Desenvolvimento de Sistemas. Desde então, dedico-me a aprimorar minhas habilidades com foco em desenvolvimento back-end e buscar oportunidades na área de desenvolvimento de software.
-                            </p>
-                        </div>
+                        <TimeLineAboutMe />
                     </motion.div>
 
-                    <motion.div 
+                    {/* <motion.div 
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.3 }}
@@ -162,7 +154,7 @@ export default function AboutMePage() {
                                 Veja Meus Projetos
                             </button>
                         </div>
-                    </motion.div>
+                    </motion.div> */}
                 </div>
             </div>
         </>
