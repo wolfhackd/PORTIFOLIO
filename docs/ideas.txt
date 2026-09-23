@@ -1,0 +1,2 @@
+Uma boa biblioteca para gerenciar os projetos online ou não
+https://ui.8starlabs.com/docs/components/status-indicator

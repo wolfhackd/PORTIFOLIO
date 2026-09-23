@@ -44,7 +44,7 @@ export const TimeLineAboutMe = () =>{
                 <h2 className="font-heading text-3xl font-bold tracking-tight text-cyan-400">
                     Três anos em desenvolvimento
                 </h2>
-                <p className="mx-auto mt-3 max-w-lg text-muted-foreground">
+                <p className="mx-auto mt-3 max-w-lg text-muted-foreground font-bold">
                     Um pouco do meu caminho
                 </p> 
                 </div>
@@ -54,6 +54,8 @@ export const TimeLineAboutMe = () =>{
                     className="absolute top-2 bottom-2 left-3 w-px bg-border md:left-1/2 md:-translate-x-1/2"
                     aria-hidden="true"
                 />
+
+                {/* Tentar fazer linha principal descer de acordo com scroll acho que fica mais legal */}
 
                 {events.map((event, i) => {
                     const right = i % 2 === 1
