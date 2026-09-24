@@ -1,5 +1,4 @@
 import { list as TechnologyList } from "~/data/technology"; 
-import { ScrollArea } from "./ui/scroll-area";
 
 export default function TecnologiesGrid() {
   return (

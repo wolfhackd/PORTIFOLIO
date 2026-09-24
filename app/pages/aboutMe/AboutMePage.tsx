@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import FeaturesBlock from "~/components/features-1";
 import MenubarHome from "~/components/menubarHome";
 import TecnologiesGrid from "~/components/TecnologiesGrid";
 import { TimeLineAboutMe } from "~/components/timeLineAboutMe";
@@ -56,8 +57,12 @@ export default function AboutMePage() {
                     >
                         <TimeLineAboutMe />
                     </motion.div>
+                    
+                    <FeaturesBlock />
 
                     <TecnologiesGrid />
+
+
                     {/* 
 
                     <motion.div 
