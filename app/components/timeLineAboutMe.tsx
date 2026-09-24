@@ -1,3 +1,4 @@
+import {motion} from "motion/react";
 import { Badge } from "~/components/ui/badge"
 import { cn } from "~/lib/utils"
 
@@ -99,5 +100,6 @@ export const TimeLineAboutMe = () =>{
                 })}
                 </ol>
             </div>
-        )     
+
+        )    
 }

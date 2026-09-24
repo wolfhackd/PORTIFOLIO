@@ -1,11 +1,11 @@
 import { list as TechnologyList } from "~/data/technology"; 
 
-export default function TecnologiesGrid() {
+export default function TechnologiesGrid() {
   return (
     <section className="flex w-full items-center justify-center bg-transparent px-6 py-12 text-foreground">
       <div className="w-full max-w-4xl">
         <div className="mb-10 text-center">
-          <h2 className="font-heading text-2xl font-bold tracking-tight text-white">
+          <h2 className="font-heading text-2xl font-bold tracking-tight text-cyan-400">
             Arsenal Técnico
           </h2>
           <p className="mt-2 text-sm text-muted-foreground font-bold">
@@ -26,7 +26,7 @@ export default function TecnologiesGrid() {
                 className="size-10 md:size-12 mb-2 filter hover:brightness-150 transition-all"
                 title={name}
               />
-              <span className="text-xs font-medium text-muted-foreground">
+              <span className="text-xs font-bold text-muted-foreground ">
                 {name}
               </span>
             </div>
