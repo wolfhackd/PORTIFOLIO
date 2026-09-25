@@ -57,33 +57,23 @@ export default function AboutMePage() {
                         className="bg-gray-900 border border-gray-800 rounded-2xl p-8 mb-16"
                         >
                         <TimeLineAboutMe />
-                    <FeaturesBlock />
+                        <FeaturesBlock />
 
-                    <TechnologiesGrid />
+                        <TechnologiesGrid />
+
+                        <h2 className="text-2xl md:text-3xl font-semibold text-white mb-4 text-center">Vamos Criar Algo Incrível Juntos?</h2>
+                        <p className="text-gray-200 mb-8 text-base md:text-lg text-center">
+                        Se você tem um projeto em mente ou quer conversar sobre desenvolvimento de software, estou pronto para colaborar!
+                        </p>
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button className="px-8 py-3 bg-cyan-400 text-black font-semibold rounded-lg hover:bg-cyan-300 transition-colors" onClick={() => window.location.href = '/'}>
+                        Entre em Contato
+                        </button>
+                        <button className="px-8 py-3 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-400 hover:text-black transition-colors" onClick={() => window.location.href = '/projetos'}>
+                        Veja Meus Projetos
+                        </button>
+                        </div>
                     </motion.div>
-
-
-
-                    {/* 
-                    <motion.div 
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.5 }}
-                    className="bg-gradient-to-r from-cyan-900 to-blue-900 border border-cyan-700 rounded-2xl p-8 text-center"
-                    >
-                    <h2 className="text-2xl md:text-3xl font-semibold text-white mb-4">Vamos Criar Algo Incrível Juntos?</h2>
-                    <p className="text-gray-200 mb-8 text-base md:text-lg">
-                    Se você tem um projeto em mente ou quer conversar sobre desenvolvimento de software, estou pronto para colaborar!
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <button className="px-8 py-3 bg-cyan-400 text-black font-semibold rounded-lg hover:bg-cyan-300 transition-colors" onClick={() => window.location.href = '/'}>
-                    Entre em Contato
-                    </button>
-                    <button className="px-8 py-3 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-400 hover:text-black transition-colors" onClick={() => window.location.href = '/projetos'}>
-                    Veja Meus Projetos
-                    </button>
-                    </div>
-                    </motion.div> */}
                 </div>
             </div>
         </>
