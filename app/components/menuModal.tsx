@@ -91,13 +91,15 @@ export const MenuModal = () => {
                 </div>
               </CommandItem> */}
 
-              {/* <CommandItem>
-                <Calendar className="mr-2 h-4 w-4" />
-                <div>
-                  <p className="font-medium">Agenda</p>
-                  <p className="text-xs text-muted-foreground">Agende um tempo comigo</p>
-                </div>
-              </CommandItem> */}
+              <Link to={"/lista-de-desejos"}>
+                <CommandItem>
+                  <List className="mr-2 h-4 w-4" />
+                  <div>
+                    <p className="font-medium">Lista de Desejos</p>
+                    <p className="text-xs text-muted-foreground">Confira a lista de coisas que eu quero fazer</p>
+                  </div>
+                </CommandItem>
+              </Link>
 
             </CommandGroup>
 

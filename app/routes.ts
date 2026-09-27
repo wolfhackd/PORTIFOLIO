@@ -6,4 +6,5 @@ export default [
     route("projeto/:id", "routes/ProjectRoute.tsx"),
     route("projetos", "routes/ProjectsRoute.tsx"),
     route("sobre", "routes/AboutMeRoute.tsx"),
+    route("lista-de-desejos", "routes/WhiteListRoute.tsx")
 ] satisfies RouteConfig;

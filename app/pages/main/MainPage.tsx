@@ -11,13 +11,13 @@ export default function MainPage() {
         <>
          <MenubarHome />
             <Toaster />
-            <main className="bg-black">
-                <HeroSection />
-                <AboutMe />
-                <Technologies />
-                <ProjectsSection />
-                <FooterSection />
-            </main>
+            <div className="bg-black">
+            <HeroSection />,
+            <AboutMe  />,
+            <Technologies />,
+            <ProjectsSection/>,
+            <FooterSection />,
+            </div>
         </>
     );
 }
