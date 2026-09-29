@@ -26,13 +26,13 @@ export default function ContactMe({ variant = 'button' }: ContactMeProps) {
         </button>
       ) : (
         <Button
-          className="relative overflow-hidden bg-[#8DA9C4] border-2 border-[#8DA9C4] group cursor-pointer hover:bg-[#EEF4ED] text-[#0b2545]"
+          className="group relative cursor-pointer overflow-hidden border-2 border-black bg-black text-white hover:bg-[#F5E642]"
           size={'lg'}
           onClick={() => setOpen(true)}
         >
-          <span className="absolute inset-0 bg-[#0B2545] -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out z-0 pointer-events-none" />
+          <span className="pointer-events-none absolute inset-0 z-0 -translate-x-full bg-[#F5E642] transition-transform duration-500 ease-out group-hover:translate-x-0" />
 
-          <span className="relative z-10 flex items-center gap-2 transition-colors duration-500 group-hover:text-[#EEF4ED]">
+          <span className="relative z-10 flex items-center gap-2 transition-colors duration-500 group-hover:text-black">
             Vamos Conversar
             <ArrowRight className="w-5 h-5" />
           </span>
@@ -47,38 +47,42 @@ export default function ContactMe({ variant = 'button' }: ContactMeProps) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 100 }}
             transition={{ duration: 0.4, ease: 'easeOut' }}
-            className="fixed inset-0 z-[6000] flex items-end justify-center bg-black/50 backdrop-blur-sm"
+            className="fixed inset-0 z-[6000] flex items-end justify-center bg-black/50 p-0 backdrop-blur-sm sm:items-center sm:p-6"
           >
             <div className="absolute inset-0" onClick={() => setOpen(false)} />
 
             {/* modal */}
             <motion.div
               onClick={(e) => e.stopPropagation()}
-              className="relative w-full max-w-lg bg-[#EEF4ED] rounded-t-2xl shadow-lg p-6 z-10"
+              className="relative z-10 max-h-[90dvh] w-full max-w-xl overflow-y-auto border-2 border-black bg-[#d4d4d4] p-6 shadow-[8px_8px_0_#F5E642] sm:p-8"
             >
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.04)_1px,transparent_1px)] bg-[size:36px_36px]"
+              />
               {/* Header */}
-              <div className="flex justify-between items-center mb-4">
-                <h2 className="text-[#0B2545] text-lg font-semibold">Conecte-se comigo</h2>
+              <div className="relative mb-5 flex items-center justify-between border-b-2 border-black pb-4">
+                <h2 className="font-display text-3xl uppercase leading-none text-black sm:text-4xl">Conecte-se comigo</h2>
                 <Button
                   variant="ghost"
                   size="icon"
                   onClick={() => setOpen(false)}
-                  className="text-[#0B2545] hover:bg-[#8DA9C4]/20"
+                  className="rounded-none text-black hover:bg-[#F5E642]"
                 >
                   <X className="w-5 h-5" />
                 </Button>
               </div>
 
               {/* Tabs */}
-              <Tabs defaultValue="quickConection">
-                <TabsList className="grid grid-cols-2 w-full">
-                  <TabsTrigger value="quickConection">Conexão rápida</TabsTrigger>
-                  <TabsTrigger value="form">Formulário</TabsTrigger>
+              <Tabs defaultValue="quickConection" className="relative gap-5">
+                <TabsList className="grid h-auto w-full grid-cols-2 rounded-none bg-black p-1">
+                  <TabsTrigger value="quickConection" className="h-10 rounded-none text-white hover:bg-black hover:text-[#F5E642] data-active:bg-[#F5E642] data-active:text-black">Conexão rápida</TabsTrigger>
+                  <TabsTrigger value="form" className="h-10 rounded-none text-white hover:bg-black hover:text-[#F5E642] data-active:bg-[#F5E642] data-active:text-black">Formulário</TabsTrigger>
                 </TabsList>
 
                 {/* Quick Connect */}
-                <TabsContent value="quickConection" className="mt-4 flex justify-around">
-                  <Button variant="outline" className="bg-[#8DA9C4]/20 text-[#0B2545]">
+                <TabsContent value="quickConection" className="mt-0 grid grid-cols-1 gap-3 sm:grid-cols-3">
+                  <Button variant="outline" className="h-11 rounded-none border-2 border-black bg-transparent text-black hover:bg-black hover:text-[#F5E642]">
                     <a
                       href="https://www.linkedin.com/in/mauro-leal-b1134425a/"
                       target="_blank"
@@ -87,7 +91,7 @@ export default function ContactMe({ variant = 'button' }: ContactMeProps) {
                       <FontAwesomeIcon icon={faLinkedin} className="mr-2" /> LinkedIn
                     </a>
                   </Button>
-                  <Button variant="outline" className="bg-[#8DA9C4]/20 text-[#0B2545]">
+                  <Button variant="outline" className="h-11 rounded-none border-2 border-black bg-transparent text-black hover:bg-black hover:text-[#F5E642]">
                     <a
                       href="https://github.com/wolfhackd"
                       target="_blank"
@@ -96,7 +100,7 @@ export default function ContactMe({ variant = 'button' }: ContactMeProps) {
                       <FontAwesomeIcon icon={faGithub} className="mr-2" /> GitHub
                     </a>
                   </Button>
-                  <Button variant="outline" className="bg-[#8DA9C4]/20 text-[#0B2545]">
+                  <Button variant="outline" className="h-11 rounded-none border-2 border-black bg-transparent text-black hover:bg-black hover:text-[#F5E642]">
                     <a
                       href="https://instagram.com/codeway__"
                       target="_blank"
@@ -108,8 +112,8 @@ export default function ContactMe({ variant = 'button' }: ContactMeProps) {
                 </TabsContent>
 
                 {/* Form */}
-                <TabsContent value="form" className="mt-6 text-center text-[#0B2545]">
-                  <p className="text-sm mb-4">Envie uma mensagem direta para meu e-mail:</p>
+                <TabsContent value="form" className="mt-0 text-black">
+                  <p className="mb-4 text-sm">Envie uma mensagem direta para meu e-mail:</p>
 
                   <form
                     onSubmit={(e) => {
@@ -127,37 +131,40 @@ export default function ContactMe({ variant = 'button' }: ContactMeProps) {
 
                       window.location.href = `mailto:mauro.costa.12.j@hotmail.com?subject=${subject}&body=${body}`;
                     }}
-                    className="flex flex-col gap-3 max-w-md mx-auto text-left"
+                    className="mx-auto flex max-w-md flex-col gap-3 text-left"
                   >
-                    <label className="text-sm font-medium">Nome</label>
+                    <label htmlFor="contact-name" className="text-sm font-bold uppercase tracking-wider">Nome</label>
                     <input
+                      id="contact-name"
                       type="text"
                       name="name"
                       placeholder="Seu nome"
                       required
-                      className="w-full p-2 border border-[#8DA9C4] rounded-md focus:outline-none focus:ring-2 focus:ring-[#8DA9C4] bg-white text-[#0B2545]"
+                      className="w-full border-2 border-black bg-white p-3 text-black placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-[#F5E642]"
                     />
 
-                    <label className="text-sm font-medium">E-mail</label>
+                    <label htmlFor="contact-email" className="text-sm font-bold uppercase tracking-wider">E-mail</label>
                     <input
+                      id="contact-email"
                       type="email"
                       name="email"
                       placeholder="seuemail@exemplo.com"
                       required
-                      className="w-full p-2 border border-[#8DA9C4] rounded-md focus:outline-none focus:ring-2 focus:ring-[#8DA9C4] bg-white text-[#0B2545]"
+                      className="w-full border-2 border-black bg-white p-3 text-black placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-[#F5E642]"
                     />
 
-                    <label className="text-sm font-medium">Mensagem</label>
+                    <label htmlFor="contact-message" className="text-sm font-bold uppercase tracking-wider">Mensagem</label>
                     <textarea
+                      id="contact-message"
                       name="message"
                       placeholder="Escreva sua mensagem aqui..."
                       required
-                      className="w-full h-32 p-3 border border-[#8DA9C4] rounded-md resize-none focus:outline-none focus:ring-2 focus:ring-[#8DA9C4] bg-white text-[#0B2545]"
+                      className="h-32 w-full resize-none border-2 border-black bg-white p-3 text-black placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-[#F5E642]"
                     />
 
                     <Button
                       type="submit"
-                      className="mt-2 bg-[#8DA9C4] text-[#0B2545] hover:bg-[#0B2545] hover:text-[#EEF4ED] transition-colors"
+                      className="mt-2 h-11 rounded-none border-2 border-black bg-black font-bold uppercase tracking-wider text-white transition-colors hover:bg-[#F5E642] hover:text-black"
                     >
                       Enviar Mensagem
                     </Button>
