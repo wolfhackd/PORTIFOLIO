@@ -10,6 +10,7 @@ export function ProjectsSection() {
 
   return (
     <motion.section
+      id="projetos"
       className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-gray-950 text-white py-32 px-6"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}

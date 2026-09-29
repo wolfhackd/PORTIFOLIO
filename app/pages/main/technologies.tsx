@@ -5,7 +5,7 @@ import { list as TechnologyList} from '../../data/technology'
 export default function Technologies() {
 
   return (
-    <section className="relative overflow-hidden py-28 text-[#EEF4ED] bg-[#134074] poppins-regular">
+    <section id="tecnologias" className="relative overflow-hidden py-28 text-[#EEF4ED] bg-[#134074] poppins-regular">
       {/* Fundo sutil animado */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.05),transparent_70%)]" />
 

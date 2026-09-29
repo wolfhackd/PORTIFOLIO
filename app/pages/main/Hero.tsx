@@ -1,81 +1,68 @@
-import { motion } from "motion/react";
-import { TypewriterEffect } from "./components/typewriter-effect";
-import CopyEmail from "./components/CopyEmail";
-import { StarsBackground } from "./components/stars-background";
-import ContactMe from "~/components/contactMe";
+import { motion } from 'motion/react';
+import ContactMe from '~/components/contactMe';
 
-
-const words = [
-  {
-    text: 'Olá,',
-    className: ' text-white',
-  },
-  {
-    text: 'meu',
-    className: ' text-white',
-  },
-  {
-    text: 'nome',
-    className: ' text-white',
-  },
-  {
-    text: 'é',
-    className: ' text-white',
-  },
-  {
-    text: 'Mauro',
-    className: 'font-medium text-white',
-  },
-  {
-    text: 'Leal',
-    className: 'font-medium text-white',
-  },
-  {
-    text: 'e',
-    className: ' text-white',
-  },
-  {
-    text: ' sou',
-    className: ' text-white',
-  },
-  {
-    text: ' desenvolvedor',
-    className: ' text-white',
-  },
-  {
-    text: ' Fullstack.',
-    className: ' text-white',
-  },
-];
 export const HeroSection = () => {
-    return (
-    <section className="flex flex-col w-full pb-10 h-screen relative text-white overflow-hidden poppins-regular bg-black">
-      {/* motion.div substitui o container principal */}
-      <motion.div
-        className="flex flex-col items-center space-y-12 pt-[18%] z-40"
-        initial={{ opacity: 0, y: 60 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, ease: 'easeOut' }}
-      >
-        <h2 className="text-4xl md:text-5xl font-semibold text-center drop-shadow-lg">
-          Transformamos suas ideias em código
-        </h2>
+  return (
+    <section
+      id="hero"
+      className="relative flex min-h-dvh w-full overflow-hidden bg-[#d4d4d4] text-black"
+    >
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.04)_1px,transparent_1px)] bg-[size:72px_72px]"
+      />
 
-        <TypewriterEffect words={words} className="text-[#EEF4ED]" />
+      <div className="relative z-10 flex w-full flex-col justify-center px-6 sm:px-12 md:px-16 lg:px-24 xl:px-32">
+        <div className="max-w-[92vw]">
+          <motion.p
+            initial={{ opacity: 0, y: 36 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.05, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            className="font-display text-[clamp(2.4rem,7vw,5.5rem)] leading-[0.82] tracking-tight"
+          >
+            EU
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 36 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.15, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            className="font-display text-[clamp(2.4rem,7vw,5.5rem)] leading-[0.82] tracking-tight"
+          >
+            SOU
+          </motion.p>
+          <motion.h1
+            initial={{ opacity: 0, y: 36 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.28, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            className="font-display mt-1 text-[clamp(3.2rem,13vw,11rem)] leading-[0.82] tracking-tight"
+          >
+            MAURO LEAL
+          </motion.h1>
 
-        <motion.div
-          className="flex gap-10"
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6, duration: 0.8, ease: 'easeOut' }}
-        >
-          <ContactMe />
-          <CopyEmail email="mauro.costa.12.j@hotmail.com" />
-        </motion.div>
-      </motion.div>
-      <StarsBackground className="absolute" />
-      <StarsBackground className="absolute" />
-      <StarsBackground className="absolute" />
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.6, ease: 'easeOut' }}
+            className="mt-5 flex flex-wrap items-stretch"
+          >
+            <span className="bg-black px-2.5 py-1 text-[0.7rem] font-black tracking-[0.18em] text-white sm:text-sm">
+              SOFTWARE
+            </span>
+            <span className="bg-[#F5E642] px-2.5 py-1 text-[0.7rem] font-black tracking-[0.18em] text-black sm:text-sm">
+              DEVELOPMENT
+            </span>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7, duration: 0.55, ease: 'easeOut' }}
+            className="mt-10"
+          >
+            <ContactMe variant="editorial" />
+          </motion.div>
+        </div>
+      </div>
     </section>
   );
-}
+};

@@ -22,13 +22,22 @@ import {
 } from './ui/command';
 import { Link } from 'react-router';
 
-export const MenuModal = () => {
+type MenuModalProps = {
+  iconClassName?: string;
+};
+
+export const MenuModal = ({ iconClassName = 'text-[#EEF4ED]' }: MenuModalProps) => {
   const [open, setOpen] = useState(false);
 
   return (
     <>
-      <button onClick={() => setOpen(true)}>
-        <AppWindow className="text-[#EEF4ED] cursor-pointer m-1 p-1 rounded-md size-8" />
+      <button
+        type="button"
+        onClick={() => setOpen(true)}
+        aria-label="Abrir menu"
+        className="rounded-sm border border-current p-1 transition-colors"
+      >
+        <AppWindow className={`m-0 size-7 cursor-pointer ${iconClassName}`} />
       </button>
 
       <CommandDialog open={open} onOpenChange={setOpen}>

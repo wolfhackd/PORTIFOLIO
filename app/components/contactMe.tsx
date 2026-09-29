@@ -1,4 +1,3 @@
-
 import { ArrowRight, X } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
 import { useState } from 'react';
@@ -7,23 +6,38 @@ import { Button } from './ui/button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
-export default function ContactMe() {
+type ContactMeProps = {
+  variant?: 'button' | 'editorial';
+};
+
+export default function ContactMe({ variant = 'button' }: ContactMeProps) {
   const [open, setOpen] = useState(false);
 
   return (
     <>
-      <Button
-        className="relative overflow-hidden bg-[#8DA9C4] border-2 border-[#8DA9C4] group cursor-pointer hover:bg-[#EEF4ED] text-[#0b2545]"
-        size={'lg'}
-        onClick={() => setOpen(true)}
-      >
-        <span className="absolute inset-0 bg-[#0B2545] -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out z-0 pointer-events-none" />
+      {variant === 'editorial' ? (
+        <button
+          type="button"
+          onClick={() => setOpen(true)}
+          className="group inline-flex cursor-pointer items-center gap-2 border-b-2 border-black pb-0.5 text-sm font-black uppercase tracking-[0.18em] text-black transition-colors hover:border-[#F5E642] hover:text-neutral-800"
+        >
+          Vamos conversar
+          <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
+        </button>
+      ) : (
+        <Button
+          className="relative overflow-hidden bg-[#8DA9C4] border-2 border-[#8DA9C4] group cursor-pointer hover:bg-[#EEF4ED] text-[#0b2545]"
+          size={'lg'}
+          onClick={() => setOpen(true)}
+        >
+          <span className="absolute inset-0 bg-[#0B2545] -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out z-0 pointer-events-none" />
 
-        <span className="relative z-10 flex items-center gap-2 transition-colors duration-500 group-hover:text-[#EEF4ED]">
-          Vamos Conversar
-          <ArrowRight className="w-5 h-5" />
-        </span>
-      </Button>
+          <span className="relative z-10 flex items-center gap-2 transition-colors duration-500 group-hover:text-[#EEF4ED]">
+            Vamos Conversar
+            <ArrowRight className="w-5 h-5" />
+          </span>
+        </Button>
+      )}
 
       {/* MODAL */}
       <AnimatePresence>
@@ -33,7 +47,7 @@ export default function ContactMe() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 100 }}
             transition={{ duration: 0.4, ease: 'easeOut' }}
-            className="fixed inset-0 z-50 flex items-end justify-center bg-black/50 backdrop-blur-sm"
+            className="fixed inset-0 z-[6000] flex items-end justify-center bg-black/50 backdrop-blur-sm"
           >
             <div className="absolute inset-0" onClick={() => setOpen(false)} />
 

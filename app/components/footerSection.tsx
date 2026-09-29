@@ -17,7 +17,7 @@ const FooterSection = () => {
   ];
 
   return (
-    <footer className="relative w-full bg-gradient-to-br from-[#0f1b2e] via-[#13315C] to-[#0a1428] text-[#EEF4ED] overflow-hidden">
+    <footer id="contato" className="relative w-full bg-gradient-to-br from-[#0f1b2e] via-[#13315C] to-[#0a1428] text-[#EEF4ED] overflow-hidden">
       {/* Decorative background elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#2B7FFF] rounded-full blur-3xl"></div>

@@ -8,6 +8,7 @@
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-display: "Bebas Neue", sans-serif;
 }
 
 .scrollbar-hidden {
@@ -17,6 +18,10 @@
 
 .scrollbar-hidden::-webkit-scrollbar {
   display: none;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 html,
@@ -31,6 +36,7 @@ body {
 @theme inline {
   --font-heading: var(--font-sans);
   --font-sans: 'Inter Variable', sans-serif;
+  --font-display: "Bebas Neue", sans-serif;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
