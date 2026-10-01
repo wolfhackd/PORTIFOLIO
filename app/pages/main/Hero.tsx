@@ -48,6 +48,7 @@ export const HeroSection = () => {
             <span className="bg-black px-2.5 py-1 text-[0.7rem] font-black tracking-[0.18em] text-white sm:text-sm">
               SOFTWARE
             </span>
+             
             <span className="bg-[#F5E642] px-2.5 py-1 text-[0.7rem] font-black tracking-[0.18em] text-black sm:text-sm">
               DEVELOPMENT
             </span>

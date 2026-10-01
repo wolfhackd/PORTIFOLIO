@@ -1,70 +1,74 @@
 import { motion } from 'motion/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { handleLink } from './../../utils/handleLink';
-import { StarsBackground } from './components/stars-background';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { HoverCard, HoverCardContent, HoverCardTrigger } from '~/components/ui/hover-card';
 
 export const AboutMe = () => {
   return (
-    <section id="sobre" className="w-full flex justify-center py-20 bg-black relative poppins-regular">
+    <section id="sobre" className="relative w-full overflow-hidden bg-[#d4d4d4] py-24 text-black sm:py-32">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.04)_1px,transparent_1px)] bg-size-[72px_72px]"
+      />
       <motion.div
-        className="max-w-3xl text-center px-auto space-y-6 z-4000"
+        className="relative z-10 mx-auto grid w-full max-w-6xl gap-12 px-6 sm:px-12 md:grid-cols-[0.8fr_1.2fr] md:items-start md:px-16 lg:px-24"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, ease: 'easeOut' }}
-        viewport={{ once: false }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+        viewport={{ once: true }}
       >
-        <p className="text-sm uppercase tracking-[3px] text-[#8DA9C4]">Sobre Mim</p>
+        <div>
+          <p className="mb-5 inline-block bg-[#F5E642] px-2.5 py-1 text-xs font-black uppercase tracking-[0.2em]">
+            Sobre mim
+          </p>
+          <h2 className="font-display text-[clamp(3.5rem,8vw,7rem)] leading-[0.82] tracking-tight">
+            CURIOSO
+            <br />
+            POR NATUREZA
+          </h2>
+        </div>
 
-        <h2 className="text-4xl md:text-5xl font-semibold text-white drop-shadow-lg">
-          Desenvolvedor Full-Stack e um curioso
-        </h2>
+        <div className="max-w-2xl border-t-2 border-black pt-5 text-base leading-relaxed sm:text-lg">
+          <p>
+            Eu sou <span className="font-bold">Mauro Leal</span>, desenvolvedor full-stack apaixonado
+            por criar soluções digitais. Do front-end ao back-end, meu foco é resolver problemas
+            complexos com código limpo e eficiente.
+          </p>
+          <p className="mt-5 text-black/60">
+            Quando não estou trabalhando, estou explorando novas ideias e saciando minha curiosidade.
+          </p>
 
-        <p className="text-[#8DA9C4] leading-relaxed">
-          Eu sou <span className="font-semibold text-white">Mauro Leal</span>, apaixonado por criar
-          soluções digitais. Do front-end ao back-end, meu foco é resolver problemas complexos com
-          código limpo e eficiente. Sempre buscando a evolução para ser um profissional melhor.
-        </p>
+          <blockquote className="mt-8 border-l-4 border-black bg-[#F5E642] px-4 py-3 text-sm font-semibold italic">
+            “O presente é deles, mas o futuro é nosso.” — Nikola Tesla
+          </blockquote>
 
-        <p className="text-gray-400 italic">
-          Quando não estou trabalhando, estou explorando novas ideias e saciando minha curiosidade.
-        </p>
-
-        <blockquote className="text-[#0B2545] text-sm italic border-l-4 border-[#134074] pl-4 bg-[#8DA9C4]">
-          "O presente é deles, mas o futuro é nosso." — Nikola Tesla
-        </blockquote>
-
-        <div className="flex justify-center gap-6 z-4000 text-white">
+          <div className="mt-8 flex gap-5 border-t border-black/30 pt-5 text-xl">
           <HoverCard>
             <HoverCardTrigger
-              className="cursor-pointer"
+              className="cursor-pointer transition-transform hover:-translate-y-1"
               onClick={() => handleLink('https://www.linkedin.com/in/mauro-leal-b1134425a/')}
             >
-              {/* <Linkedin /> */}
               <FontAwesomeIcon icon={faLinkedin} />
             </HoverCardTrigger>
-            <HoverCardContent side="top" className="text-center w-fit z-4000">
+            <HoverCardContent side="top" className="z-4000 w-fit text-center">
               LinkedIn
             </HoverCardContent>
           </HoverCard>
           <HoverCard>
             <HoverCardTrigger
-              className="cursor-pointer"
+              className="cursor-pointer transition-transform hover:-translate-y-1"
               onClick={() => handleLink('https://github.com/wolfhackd')}
             >
-              {/* <Github /> */}
               <FontAwesomeIcon icon={faGithub} />
             </HoverCardTrigger>
-            <HoverCardContent side="top" className="text-center w-fit  z-4000">
+            <HoverCardContent side="top" className="z-4000 w-fit text-center">
               Github
             </HoverCardContent>
           </HoverCard>
+          </div>
         </div>
       </motion.div>
-      <StarsBackground className="absolute" />
-      <StarsBackground className="absolute" />
-      <StarsBackground className="absolute" />
     </section>
   );
 };

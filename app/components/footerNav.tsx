@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import { Link } from 'react-router';
 
 interface FooterNavProps {
   title: string;
@@ -7,26 +8,33 @@ interface FooterNavProps {
 
 const FooterNav = ({ title, links }: FooterNavProps) => {
   return (
-    <div className="border-l-2 pl-2 border-[#2B7FFF]">
-      <h3 className="font-bold mb-2">{title}</h3>
+    <div>
+      <h3 className="mb-4 border-t border-[#F5E642] pt-3 text-xs font-black uppercase tracking-[0.16em] text-[#F5E642]">
+        {title}
+      </h3>
       <ul className="space-y-1">
         {links.map((link) => (
           <motion.li
-            key={link.href}
+            key={`${link.name}-${link.href}`}
             whileHover="hover"
             initial="initial"
-            className="relative transition-colors cursor-pointer"
-            onClick={() => window.location.href = link.href}
+            className="w-fit"
           >
-            {link.name}
-            <motion.span
-              className="absolute left-0 -bottom-0.5 h-[2px] bg-[#2B7FFF] block"
-              variants={{
-                initial: { width: 0 },
-                hover: { width: '100%' },
-              }}
-              transition={{ duration: 0.3, ease: 'easeInOut' }}
-            />
+            <Link
+              to={link.href}
+              className="group relative inline-flex py-0.5 text-sm text-white/65 transition-colors hover:text-white"
+            >
+              {link.name}
+              <motion.span
+                aria-hidden="true"
+                className="absolute bottom-0 left-0 block h-px bg-[#F5E642]"
+                variants={{
+                  initial: { width: 0 },
+                  hover: { width: '100%' },
+                }}
+                transition={{ duration: 0.25, ease: 'easeInOut' }}
+              />
+            </Link>
           </motion.li>
         ))}
       </ul>

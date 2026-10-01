@@ -40,7 +40,7 @@ export default function SectionDots() {
     return () => observer.disconnect();
   }, []);
 
-  const isLight = activeId === 'hero';
+  const isLight = activeId !== 'contato';
 
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -49,7 +49,7 @@ export default function SectionDots() {
   return (
     <nav
       aria-label="Navegação das seções"
-      className="pointer-events-none fixed top-1/2 right-3 z-[4000] flex -translate-y-1/2 sm:right-6 lg:right-8"
+      className="pointer-events-none fixed top-1/2 right-3 z-4000 flex -translate-y-1/2 sm:right-6 lg:right-8"
     >
       <ul className="pointer-events-auto flex flex-col items-center gap-3">
         {sections.map((section) => {
@@ -59,7 +59,7 @@ export default function SectionDots() {
             <li key={section.id} className="group relative flex items-center">
               <span
                 className={cn(
-                  'pointer-events-none absolute right-6 rounded-sm px-2 py-1 text-[10px] font-bold tracking-[0.16em] uppercase opacity-0 transition-opacity duration-200 group-hover:opacity-100',
+                  'pointer-events-none absolute right-6 rounded-sm px-2 py-1 text-[10px] font-bold tracking-[0.16em] uppercase opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-within:opacity-100',
                   isLight ? 'bg-black text-white' : 'bg-[#F5E642] text-black',
                 )}
               >

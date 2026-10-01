@@ -1,6 +1,5 @@
 import { Link } from 'react-router';
 import { useEffect, useState } from 'react';
-import { Button } from './ui/button';
 import { MenuModal } from './menuModal';
 import { cn } from '~/lib/utils';
 
@@ -9,70 +8,69 @@ type MenubarHomeProps = {
 };
 
 const MenubarHome = ({ adaptive = false }: MenubarHomeProps) => {
-  const [onLight, setOnLight] = useState(adaptive);
+  const [onLight, setOnLight] = useState(true);
 
-  useEffect(() => {
-    if (!adaptive) return;
+  // useEffect(() => {
+  //   if (!adaptive) return;
 
-    const hero = document.getElementById('hero');
-    if (!hero) return;
+  //   const sectionIds = ['hero', 'sobre', 'tecnologias', 'projetos', 'contato'];
+  //   const sections = sectionIds
+  //     .map((id) => document.getElementById(id))
+  //     .filter((section): section is HTMLElement => Boolean(section));
+  //   if (sections.length === 0) return;
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setOnLight(entry.isIntersecting && entry.intersectionRatio > 0.35);
-      },
-      { threshold: [0.2, 0.35, 0.5] },
-    );
+  //   const observer = new IntersectionObserver(
+  //     (entries) => {
+  //       const activeSection = entries.find((entry) => entry.isIntersecting);
+  //       if (activeSection) {
+  //         setOnLight(activeSection.target.id !== 'contato');
+  //       }
+  //     },
+  //     { threshold: 0, rootMargin: '-45% 0px -45% 0px' },
+  //   );
 
-    observer.observe(hero);
-    return () => observer.disconnect();
-  }, [adaptive]);
+  //   sections.forEach((section) => observer.observe(section));
+  //   return () => observer.disconnect();
+  // }, [adaptive]);
 
   const linkClass = cn(
-    'font-bold rounded-full cursor-pointer',
-    onLight
-      ? 'text-black hover:bg-black hover:text-white'
-      : 'text-white hover:bg-[#EEF4ED] hover:text-black',
+    'inline-flex min-h-10 items-center px-3 text-sm font-bold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#F5E642]',
+    onLight ? 'text-black hover:bg-[#F5E642]' : 'text-white hover:bg-[#F5E642] hover:text-black',
   );
 
   return (
     <div
       className={cn(
-        'fixed z-5000 flex w-full justify-between p-4 transition-colors duration-300',
-        onLight ? 'bg-transparent' : 'from-gray-900 via-gray-800 to-transparent backdrop-blur-sm',
+        'fixed inset-x-0 top-0 z-5000 px-4 pt-4 transition-colors duration-300 sm:px-6',
       )}
     >
-      <nav className="self-center p-0">
-        <Link to="/">
-          <Button variant="link" className={linkClass}>
+      <div
+        className={cn(
+          'mx-auto flex w-full max-w-6xl items-center justify-between border-2 px-2 py-2 shadow-[4px_4px_0_#F5E642] backdrop-blur-md transition-colors duration-300',
+          onLight ? 'border-black bg-[#d4d4d4]/95 text-black' : 'border-white/35 bg-black/95 text-white',
+        )}
+      >
+        <nav aria-label="Navegação principal" className="hidden items-center gap-1 sm:flex">
+          <Link to="/" className={linkClass}>
             Home
-          </Button>
-        </Link>
-        <Link to="/sobre">
-          <Button variant="link" className={linkClass}>
+          </Link>
+          <Link to="/sobre" className={linkClass}>
             Sobre
-          </Button>
-        </Link>
-        <Link to="/projetos">
-          <Button variant="link" className={linkClass}>
+          </Link>
+          <Link to="/projetos" className={linkClass}>
             Projetos
-          </Button>
-        </Link>
-        <Link to="/InProgress">
-          <Button
-            variant="link"
-            className={cn(
-              'rounded-full font-bold cursor-pointer',
-              onLight
-                ? 'bg-[#F5E642] text-black hover:bg-black hover:text-[#F5E642]'
-                : 'bg-[#8DA9C4] text-black hover:bg-[#EEF4ED]',
-            )}
+          </Link>
+        </nav>
+        <div className="ml-auto flex items-center gap-2 sm:ml-0">
+          <Link
+            to="/inProgress"
+            className="inline-flex min-h-10 items-center bg-[#F5E642] px-3 text-sm font-black text-black transition-colors hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#F5E642]"
           >
-            Fale Comigo
-          </Button>
-        </Link>
-      </nav>
-      <MenuModal iconClassName={onLight ? 'text-black' : 'text-[#EEF4ED]'} />
+            Fale comigo
+          </Link>
+          <MenuModal iconClassName="text-current" />
+        </div>
+      </div>
     </div>
   );
 };

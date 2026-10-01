@@ -1,90 +1,115 @@
-import { motion } from "framer-motion";
-import { Link } from "react-router";
+import { ArrowRight, ArrowUpRight } from 'lucide-react';
+import { motion } from 'motion/react';
+import { Link } from 'react-router';
 
-import { ImageCloud } from "~/service/ImageCloud";
-import {list as ProjectList} from "~/data/projects"
+import { list as ProjectList } from '~/data/projects';
+import { ImageCloud } from '~/service/ImageCloud';
 
 export function ProjectsSection() {
-
   const TopProjects = ProjectList.slice(0, 3);
 
   return (
     <motion.section
       id="projetos"
-      className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-gray-950 text-white py-32 px-6"
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      viewport={{ once: true }}
+      className="relative overflow-hidden bg-[#d4d4d4] py-24 text-black sm:py-32"
     >
-      <div className="text-center mb-16">
-        <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-4">
-          Últimos <span className="text-cyan-400">Projetos</span>
-        </h1>
-        <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-          Confira meus trabalhos mais recentes — focados em inovação,
-          performance e design moderno.
-        </p>
-      </div>
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.04)_1px,transparent_1px)] bg-size-[72px_72px]"
+      />
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
-        {/* olhar isso */}
-        {
-          TopProjects?.map((project: any, index: any) => (
-            <motion.div
+      <div className="relative z-10 mx-auto w-full max-w-6xl px-6 sm:px-12 md:px-16 lg:px-24">
+        <motion.div
+          className="grid gap-8 md:grid-cols-[1fr_0.8fr] md:items-end"
+          initial={{ opacity: 0, y: 32 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: 'easeOut' }}
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          <div>
+            <p className="mb-5 inline-block bg-[#F5E642] px-2.5 py-1 text-xs font-black uppercase tracking-[0.2em]">
+              Seleção / 03
+            </p>
+            <h2 className="font-display text-[clamp(3.5rem,8vw,7rem)] leading-[0.82]">
+              PROJETOS
+            </h2>
+          </div>
+          <p className="max-w-xl border-t-2 border-black pt-5 text-base leading-relaxed text-black/70 sm:text-lg">
+            Trabalhos recentes que transformam ideias em experiências digitais.
+          </p>
+        </motion.div>
+
+        <div className="mt-14 grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+          {TopProjects.map((project, index) => (
+            <motion.article
               key={project.id}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 28 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="bg-gray-900 rounded-2xl border border-gray-800 shadow-lg hover:shadow-cyan-500/10 transition-all duration-300 overflow-hidden group"
+              transition={{ duration: 0.55, delay: index * 0.1, ease: 'easeOut' }}
+              viewport={{ once: true, amount: 0.15 }}
+              className="border-t-2 border-black"
             >
-              <div className="relative w-full h-56 overflow-hidden">
-                {project.images?.[0] && (
+              <div className="aspect-16/10 overflow-hidden border-b border-black/20">
+                {project.images[0] ? (
                   <ImageCloud image={project.images[0]} />
+                ) : (
+                  <div className="flex h-full items-end bg-[#F5E642] p-5">
+                    <span className="font-display text-4xl leading-none sm:text-5xl">
+                      {project.title}
+                    </span>
+                  </div>
                 )}
               </div>
 
-              <div className="p-6 flex flex-col gap-3">
-                <h2 className="text-2xl font-semibold">{project.title}</h2>
-                <p className="text-gray-400 text-sm leading-relaxed line-clamp-3">
+              <div className="flex flex-col pt-5">
+                <h3 className="font-display text-3xl leading-none sm:text-4xl">
+                  {project.title}
+                </h3>
+                <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-black/65">
                   {project.fastDescription}
                 </p>
 
-                <div className="mt-5 flex justify-between items-center">
+                <div className="mt-5 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-black/25 pt-4">
                   <Link
                     to={`/projeto/${project.id}`}
-                    className="text-cyan-400 hover:text-cyan-300 text-sm font-medium transition-colors"
+                    className="group inline-flex items-center gap-1 text-sm font-bold transition-colors hover:text-black/60"
                   >
-                    Ver projeto →
+                    Ver projeto
+                    <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
                   </Link>
                   {project.link && (
                     <a
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-400 hover:text-gray-200 text-sm"
+                      className="inline-flex items-center gap-1 text-sm text-black/60 transition-colors hover:text-black"
                     >
-                      GitHub ↗
+                      GitHub
+                      <ArrowUpRight className="size-3.5" />
                     </a>
                   )}
                 </div>
               </div>
-            </motion.div>
+            </motion.article>
           ))}
+        </div>
+
+        <motion.div
+          className="mt-14 border-t-2 border-black pt-6"
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: 'easeOut' }}
+          viewport={{ once: true }}
+        >
+          <Link
+            to="/projetos"
+            className="group inline-flex items-center gap-2 border-b-2 border-black pb-1 text-sm font-black uppercase tracking-[0.16em] transition-colors hover:border-[#F5E642]"
+          >
+            Ver todos os projetos
+            <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+          </Link>
+        </motion.div>
       </div>
-      <motion.div
-        className="text-center mt-16"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ delay: 0.5 }}
-      >
-        <Link to="/projetos">
-          <button className="px-6 py-3 bg-cyan-500 hover:bg-cyan-400 text-black font-semibold rounded-full shadow-md hover:shadow-cyan-500/20 transition-all duration-300 cursor-pointer">
-            Ver mais projetos →
-          </button>
-        </Link>
-      </motion.div>
     </motion.section>
   );
 }
