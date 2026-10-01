@@ -2,31 +2,34 @@ import { list as TechnologyList } from "~/data/technology";
 
 export default function TechnologiesGrid() {
   return (
-    <section className="flex w-full items-center justify-center bg-transparent px-6 py-12 text-foreground">
-      <div className="w-full max-w-4xl">
-        <div className="mb-10 text-center">
-          <h2 className="font-heading text-2xl font-bold tracking-tight text-cyan-400">
-            Arsenal Técnico
+    <section className="w-full bg-transparent text-black">
+      <div className="mx-auto w-full max-w-6xl">
+        <div className="mb-10 border-t-2 border-black pt-6">
+          <p className="mb-3 inline-block bg-[#F5E642] px-2.5 py-1 text-xs font-black uppercase tracking-[0.18em]">
+            Ferramentas
+          </p>
+          <h2 className="font-display text-5xl leading-[0.9] sm:text-6xl">
+            ARSENAL TÉCNICO
           </h2>
-          <p className="mt-2 text-sm text-muted-foreground font-bold">
+          <p className="mt-3 text-sm font-bold text-black/55">
             Tecnologias que eu uso no meu dia a dia.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 gap-px overflow-hidden rounded-xl bg-border sm:grid-cols-3 md:grid-cols-4 overflow-y-auto max-h-96 cursor-all-scroll scrollbar-hidden">
+        <div className="grid max-h-96 cursor-all-scroll grid-cols-2 gap-px overflow-y-auto bg-black/20 scrollbar-hidden sm:grid-cols-3 md:grid-cols-4">
 
           {TechnologyList.map(({ name, icon }) => (
             <div
             key={name}
-            className="flex flex-col items-center justify-center gap-3 bg-card px-4 py-8"
+            className="flex flex-col items-center justify-center gap-3 bg-[#d4d4d4] px-4 py-8 transition-colors hover:bg-[#F5E642]"
             >
               <img
                 src={`https://cdn.simpleicons.org/${icon}`}
                 alt={name}
-                className="size-10 md:size-12 mb-2 filter hover:brightness-150 transition-all"
+                className="mb-2 size-10 transition-all md:size-12"
                 title={name}
               />
-              <span className="text-xs font-bold text-muted-foreground ">
+              <span className="text-xs font-bold text-black/65">
                 {name}
               </span>
             </div>

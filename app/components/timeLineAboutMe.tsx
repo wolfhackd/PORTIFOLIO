@@ -36,22 +36,22 @@ const events: {
 export const TimeLineAboutMe = () =>{
     return (
             
-            <div className="mx-auto w-full max-w-3xl text-white">
+            <div className="mx-auto w-full max-w-3xl text-black">
                 <div className="mb-14 text-center">
-                <Badge variant="outline" className="mb-4 text-white">
+                <Badge variant="outline" className="mb-4 rounded-none border-black bg-[#F5E642] text-black">
                     Minha história
                 </Badge>
-                <h2 className="font-heading text-3xl font-bold tracking-tight text-cyan-400">
+                <h2 className="font-display text-5xl leading-[0.9] sm:text-6xl">
                     Três anos em desenvolvimento
                 </h2>
-                <p className="mx-auto mt-3 max-w-lg text-muted-foreground font-bold">
+                <p className="mx-auto mt-3 max-w-lg font-bold text-black/55">
                     Um pouco do meu caminho
                 </p> 
                 </div>
 
-                <ol className="relative flex flex-col gap-12" >
+                <ol className="relative flex flex-col gap-12">
                 <span
-                    className="absolute top-2 bottom-2 left-3 w-px bg-border md:left-1/2 md:-translate-x-1/2"
+                    className="absolute top-2 bottom-2 left-3 w-px bg-black/25 md:left-1/2 md:-translate-x-1/2"
                     aria-hidden="true"
                 />
 
@@ -61,11 +61,12 @@ export const TimeLineAboutMe = () =>{
                     const right = i % 2 === 1
                     return (
                     <li
+                        key={`${event.year}-${event.title}`}
                         className="relative flex items-start md:grid md:grid-cols-2 md:gap-x-12"
                     >
                         {/* Node dot on the spine */}
                         <span
-                        className="absolute top-1.5 left-3 z-10 size-2.5 -translate-x-1/2 rounded-full bg-primary ring-4 ring-background md:left-1/2"
+                        className="absolute top-1.5 left-3 z-10 size-2.5 -translate-x-1/2 rounded-full border-2 border-black bg-[#F5E642] ring-4 ring-[#d4d4d4] md:left-1/2"
                         aria-hidden="true"
                         />
 
@@ -83,15 +84,15 @@ export const TimeLineAboutMe = () =>{
                             !right && "md:justify-end"
                             )}
                         >
-                            <span className="font-mono text-sm font-semibold tabular-nums">
+                            <span className="font-mono text-sm font-black tabular-nums">
                             {event.year}
                             </span>
-                            <Badge variant="secondary">{event.tag}</Badge>
+                            <Badge variant="secondary" className="rounded-none bg-black text-white">{event.tag}</Badge>
                         </div>
-                        <h3 className="mt-2 font-heading text-base font-semibold">
+                        <h3 className="mt-2 font-heading text-base font-bold">
                             {event.title}
                         </h3>
-                        <p className="mt-1.5 text-sm/relaxed text-muted-foreground">
+                        <p className="mt-1.5 text-sm/relaxed text-black/65">
                             {event.copy}
                         </p>
                         </div>

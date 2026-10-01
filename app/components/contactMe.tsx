@@ -8,9 +8,10 @@ import { faGithub, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-
 
 type ContactMeProps = {
   variant?: 'button' | 'editorial';
+  label?: string;
 };
 
-export default function ContactMe({ variant = 'button' }: ContactMeProps) {
+export default function ContactMe({ variant = 'button', label }: ContactMeProps) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -21,7 +22,7 @@ export default function ContactMe({ variant = 'button' }: ContactMeProps) {
           onClick={() => setOpen(true)}
           className="group inline-flex cursor-pointer items-center gap-2 border-b-2 border-black pb-0.5 text-sm font-black uppercase tracking-[0.18em] text-black transition-colors hover:border-[#F5E642] hover:text-neutral-800"
         >
-          Vamos conversar
+          {label ?? 'Vamos conversar'}
           <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
         </button>
       ) : (
@@ -33,7 +34,7 @@ export default function ContactMe({ variant = 'button' }: ContactMeProps) {
           <span className="pointer-events-none absolute inset-0 z-0 -translate-x-full bg-[#F5E642] transition-transform duration-500 ease-out group-hover:translate-x-0" />
 
           <span className="relative z-10 flex items-center gap-2 transition-colors duration-500 group-hover:text-black">
-            Vamos Conversar
+            {label ?? 'Vamos Conversar'}
             <ArrowRight className="w-5 h-5" />
           </span>
         </Button>

@@ -10,7 +10,7 @@ export const HeroSection = () => {
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.04)_1px,transparent_1px)] bg-[size:72px_72px]"
-      />
+      />  
 
       <div className="relative z-10 flex w-full flex-col justify-center px-6 sm:px-12 md:px-16 lg:px-24 xl:px-32">
         <div className="max-w-[92vw]">

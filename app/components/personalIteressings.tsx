@@ -4,37 +4,26 @@ import {
   CardHeader,
   CardTitle,
 } from "~/components/ui/card"
-import { Flashlight, ShieldCheck, LayoutGrid, ChartBar, LineChart, Settings } from "lucide-react"
-
-/** Props a call site may pass through to an icon. */
-type IconProps = { className?: string; size?: number | string }
+import { BookOpen, Dumbbell, Lightbulb, Music2 } from "lucide-react"
 
 const features = [
   {
-    icon: (p: IconProps) => (
-      <Flashlight {...p} />
-    ),
+    icon: Music2,
     title: "Músicas para Programar",
     copy: "Sou fã de música eletrônica, lo-fi, rock e clássicas para manter o foco durante as sessões de desenvolvimento.",
   },
   {
-    icon: (p: IconProps) => (
-      <ShieldCheck {...p} />
-    ),
+    icon: Dumbbell,
     title: "Esportes & Calistenia",
     copy: "Pratico calistenia e diversos outros esportes para manter a mente e o corpo em equilíbrio.",
   },
   {
-    icon: (p: IconProps) => (
-      <LayoutGrid {...p} />
-    ),
+    icon: BookOpen,
     title: "Leitura & Desenvolvimento Pessoal",
     copy: "Leio livros de autoajuda e biografias para entender a mentalidade de grandes CEOs e líderes.",
   },
   {
-    icon: (p: IconProps) => (
-      <ChartBar {...p} />
-    ),
+    icon: Lightbulb,
     title: "Inovação & Empreendedorismo",
     copy: "Tenho interesse em criar soluções inovadoras e explorar novas oportunidades no mercado de tecnologia.",
   },
@@ -42,28 +31,31 @@ const features = [
 
 export default function FeaturesBlock() {
   return (
-    <section className="flex w-full items-center justify-center bg-transparent px-6 py-16 text-foreground">
-      <div className="mx-auto w-full max-w-5xl">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight sm:text-4xl text-cyan-400">
-            Interesses Pessoais
+    <section className="w-full bg-[#d4d4d4] px-6 py-20 text-black sm:px-12 sm:py-24 md:px-16 lg:px-24">
+      <div className="mx-auto w-full max-w-6xl">
+        <div className="mb-10 border-t-2 border-black pt-6 sm:mb-12">
+          <p className="mb-3 inline-block bg-[#F5E642] px-2.5 py-1 text-xs font-black uppercase tracking-[0.18em]">
+            Fora do código
+          </p>
+          <h2 className="font-display text-5xl leading-[0.9] sm:text-6xl">
+            INTERESSES PESSOAIS
           </h2>
-          <p className="mt-3 text-muted-foreground font-bold">
+          <p className="mt-3 font-bold text-black/55">
             As coisas que me fazem ser quem eu sou.
           </p>
         </div>
 
-        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           {features.map(({ icon: Icon, title, copy }) => (
-            <Card key={title} className="p-6 bg-[#101828]">
+            <Card key={title} className="h-full rounded-none border-2 border-black bg-white p-6 shadow-[4px_4px_0_#F5E642]">
               <CardHeader className="p-0">
-                <span className="flex size-11 items-center justify-center rounded-lg border border-border bg-muted">
-                  <Icon className="size-5 text-cyan-400" aria-hidden="true" />
+                <span className="flex size-11 items-center justify-center border-2 border-black bg-[#F5E642]">
+                  <Icon className="size-5 text-black" aria-hidden="true" />
                 </span>
-                <CardTitle className="mt-4 text-base font-semibold text-white">
+                <CardTitle className="mt-4 text-base font-semibold text-black">
                   {title}
                 </CardTitle>
-                <CardDescription className="mt-2 text-sm text-white">
+                <CardDescription className="mt-2 text-sm text-black/65">
                   {copy}
                 </CardDescription>
               </CardHeader>
