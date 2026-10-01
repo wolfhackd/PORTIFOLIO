@@ -11,7 +11,6 @@ import { dateFormatter } from "~/utils/dateFormatter";
 import { list as ProjectList }  from "~/data/projects";
 import type { Project } from "~/types/project";
 import { list as TechnologyList } from "~/data/technology";
-import { projectTechnologiesRelation } from "~/data/projectTechnologiesRelation";
 
 const ProjectPage = () => {
   const { id } = useParams<{ id: string }>();
@@ -20,9 +19,9 @@ const ProjectPage = () => {
 
   const project: Project | undefined = rawProject ? {
     ...rawProject,
-    technologies: (projectTechnologiesRelation.find(r => r.projectId === rawProject.id)?.techIds || [])
-      .map(techId => TechnologyList.find(tech => tech.id === techId))
-      .filter((tech): tech is any => !!tech) 
+    technologies: TechnologyList.filter((technology) =>
+      rawProject.technologyIds.includes(technology.id)
+    ),
   } : undefined;
   
   if (!project) {

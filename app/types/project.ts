@@ -3,6 +3,7 @@ import type { Technology } from "./technology";
 
 export type Project = {
     id: string;
+    technologyIds: string[];
     title: string;
     description: string;
     images: string[];

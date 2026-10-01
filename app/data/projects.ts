@@ -1,6 +1,10 @@
-export const list = [
+import type { TechnologyId } from './technology';
+import type { Project } from '~/types/project';
+
+export const list: Project[] = [
   {
     id: '998e7eca-10ef-4ec6-a3f8-d64f470edb9d',
+    technologyIds: ['typescript', 'nodejs', 'tailwind-css', 'react', 'shadcn', 'zod', 'drizzle-orm'] satisfies TechnologyId[],
     title: 'Let Me Ask',
     description:
       'O Let Me Ask é um app de perguntas e respostas em tempo real para lives e eventos, onde os participantes podem enviar questões, votar nas mais relevantes e acompanhar se já foram respondidas. A proposta é organizar a participação do público, promovendo engajamento e clareza na comunicação.',
@@ -15,6 +19,7 @@ export const list = [
   },
   {
     id: 'd0a3473e-7a24-4683-a85c-ad5695409535',
+    technologyIds: ['javascript', 'nodejs', 'react', 'tailwind-css'] satisfies TechnologyId[],
     title: 'Spotify',
     description:
       'Website de música inspirado no Spotify, que permite ao usuário navegar entre playlists, ouvir prévias de faixas e explorar artistas e álbuns.',
@@ -28,6 +33,7 @@ export const list = [
   },
   {
     id: 'd6173ccf-b565-4605-9cd8-3136ec6b8b5f',
+    technologyIds: ['typescript', 'nextjs', 'react', 'shadcn', 'zod', 'drizzle-orm'] satisfies TechnologyId[],
     title: 'PortuGênio',
     description:
       'O PortuGênio é um projeto web voltado para o ensino e aprimoramento da língua portuguesa, com foco inicial na gramática. A plataforma utiliza inteligência artificial para oferecer correções automáticas, explicações personalizadas e exemplos práticos, tornando o aprendizado mais dinâmico e interativo.',
@@ -41,6 +47,7 @@ export const list = [
   },
   {
     id: 'd6173ccf-b565-4605-9cd8-31asdasdasdas6b8b5f',
+    technologyIds: ['typescript', 'react-router-dom', 'shadcn', 'prisma', 'postgresql', 'socketio'] satisfies TechnologyId[],
     title: 'PulseChat',
     description:
       'O PulseChat é um projeto de chat em tempo real que utiliza WebSocket, podendo conectar vários usuários em uma mesma sala e monitorar quem está presente.',
