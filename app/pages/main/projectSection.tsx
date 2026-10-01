@@ -28,7 +28,7 @@ export function ProjectsSection() {
         >
           <div>
             <p className="mb-5 inline-block bg-[#F5E642] px-2.5 py-1 text-xs font-black uppercase tracking-[0.2em]">
-              Seleção / 03
+              Projects / 02
             </p>
             <h2 className="font-display text-[clamp(3.5rem,8vw,7rem)] leading-[0.82]">
               PROJETOS

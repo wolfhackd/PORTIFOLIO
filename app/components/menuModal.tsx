@@ -35,7 +35,7 @@ export const MenuModal = ({ iconClassName = 'text-[#EEF4ED]' }: MenuModalProps) 
         type="button"
         onClick={() => setOpen(true)}
         aria-label="Abrir menu"
-        className="rounded-sm border border-current p-1 transition-colors"
+        className="p-1 transition-colors"
       >
         <AppWindow className={`m-0 size-7 cursor-pointer ${iconClassName}`} />
       </button>
