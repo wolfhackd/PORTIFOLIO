@@ -4,6 +4,7 @@ import { Link } from 'react-router';
 import { ImageCloud } from '~/service/ImageCloud';
 import MenubarHome from '~/components/menubarHome';
 import { list as ProjectsList } from '~/data/projects';
+import FooterSection from '~/components/footerSection';
 
 const ProjectsPage = () => {
   return (
@@ -24,7 +25,7 @@ const ProjectsPage = () => {
           >
             <div>
               <p className="mb-5 inline-block bg-[#F5E642] px-2.5 py-1 text-xs font-black uppercase tracking-[0.18em]">
-                Projetos / 02
+                Projects
               </p>
               <h1 className="font-display text-[clamp(4rem,11vw,9rem)] leading-[0.82]">
                 PROJETOS
@@ -92,6 +93,7 @@ const ProjectsPage = () => {
           </div>
         </div>
       </main>
+        <FooterSection />
     </>
   );
 };
