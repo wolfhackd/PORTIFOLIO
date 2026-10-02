@@ -3,6 +3,7 @@ import { useParams } from "react-router";
 import { motion } from 'motion/react';
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { Link } from "react-router";
+import Dithered404 from "~/components/Dithered404";
 import FooterSection from "~/components/footerSection";
 import { ImageCloud } from "~/service/ImageCloud";
 import MenubarHome from "~/components/menubarHome";
@@ -26,31 +27,13 @@ const ProjectPage = () => {
   
   if (!project) {
     return (
-      <>
-        <MenubarHome adaptive />
-        <main className="relative flex min-h-screen items-center overflow-hidden bg-[#d4d4d4] px-6 py-32 text-black sm:px-12 md:px-16 lg:px-24">
-          <div
-            aria-hidden
-            className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.04)_1px,transparent_1px)] bg-[size:72px_72px]"
-          />
-          <div className="relative mx-auto w-full max-w-6xl border-t-2 border-black pt-8">
-            <p className="mb-5 inline-block bg-[#F5E642] px-2.5 py-1 text-xs font-black uppercase tracking-[0.18em]">
-              Projeto / 404
-            </p>
-            <h1 className="font-display text-[clamp(3.5rem,10vw,7rem)] leading-[0.85]">
-              PROJETO NÃO ENCONTRADO
-            </h1>
-            <Link
-              to="/projetos"
-              className="mt-8 inline-flex items-center gap-2 border-b-2 border-black pb-1 text-sm font-black uppercase tracking-[0.12em] transition-colors hover:border-[#F5E642] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
-            >
-              <ArrowLeft className="size-4" aria-hidden="true" />
-              Voltar aos projetos
-            </Link>
-          </div>
-        </main>
-        <FooterSection />
-      </>
+      <Dithered404
+        eyebrow="PROJETO / 404"
+        title="Projeto não encontrado"
+        description="Esse projeto não está disponível ou o endereço informado está incorreto."
+        to="/projetos"
+        linkLabel="Voltar aos projetos"
+      />
     );
   }
 
