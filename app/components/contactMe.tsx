@@ -1,13 +1,14 @@
 import { ArrowRight, X } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
 import { useState } from 'react';
+import { createPortal } from 'react-dom';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 import { Button } from './ui/button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 type ContactMeProps = {
-  variant?: 'button' | 'editorial';
+  variant?: 'button' | 'editorial' | 'menubar';
   label?: string;
 };
 
@@ -16,7 +17,15 @@ export default function ContactMe({ variant = 'button', label }: ContactMeProps)
 
   return (
     <>
-      {variant === 'editorial' ? (
+      {variant === 'menubar' ? (
+        <button
+          type="button"
+          onClick={() => setOpen(true)}
+          className="inline-flex min-h-10 items-center bg-[#F5E642] px-3 text-sm font-black text-black transition-colors hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#F5E642]"
+        >
+          {label ?? 'Fale comigo'}
+        </button>
+      ) : variant === 'editorial' ? (
         <button
           type="button"
           onClick={() => setOpen(true)}
@@ -41,34 +50,42 @@ export default function ContactMe({ variant = 'button', label }: ContactMeProps)
       )}
 
       {/* MODAL */}
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            initial={{ opacity: 0, y: 100 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 100 }}
-            transition={{ duration: 0.4, ease: 'easeOut' }}
-            className="fixed inset-0 z-[6000] flex items-end justify-center bg-black/50 p-0 backdrop-blur-sm sm:items-center sm:p-6"
-          >
-            <div className="absolute inset-0" onClick={() => setOpen(false)} />
-
-            {/* modal */}
+      {typeof document !== 'undefined' && createPortal(
+        <AnimatePresence>
+          {open && (
             <motion.div
-              onClick={(e) => e.stopPropagation()}
-              className="relative z-10 max-h-[90dvh] w-full max-w-xl overflow-y-auto border-2 border-black bg-[#d4d4d4] p-6 shadow-[8px_8px_0_#F5E642] sm:p-8"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="fixed inset-0 z-[6000] flex items-center justify-center overflow-y-auto bg-black/50 p-4 backdrop-blur-sm sm:p-6"
             >
+              <div className="absolute inset-0" onClick={() => setOpen(false)} />
+
+              <motion.div
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="contact-dialog-title"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 20 }}
+                transition={{ duration: 0.25, ease: 'easeOut' }}
+                onClick={(e) => e.stopPropagation()}
+                className="relative z-10 max-h-[calc(100dvh-2rem)] w-full max-w-xl overflow-y-auto overscroll-contain border-2 border-black bg-[#d4d4d4] p-4 shadow-[8px_8px_0_#F5E642] sm:max-h-[calc(100dvh-3rem)] sm:p-8"
+              >
               <div
                 aria-hidden
                 className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.04)_1px,transparent_1px)] bg-[size:36px_36px]"
               />
               {/* Header */}
-              <div className="relative mb-5 flex items-center justify-between border-b-2 border-black pb-4">
-                <h2 className="font-display text-3xl uppercase leading-none text-black sm:text-4xl">Conecte-se comigo</h2>
+              <div className="relative mb-5 flex items-center justify-between gap-3 border-b-2 border-black pb-4">
+                <h2 id="contact-dialog-title" className="min-w-0 font-display text-2xl uppercase leading-none text-black sm:text-4xl">Conecte-se comigo</h2>
                 <Button
                   variant="ghost"
                   size="icon"
                   onClick={() => setOpen(false)}
                   className="rounded-none text-black hover:bg-[#F5E642]"
+                  aria-label="Fechar contato"
                 >
                   <X className="w-5 h-5" />
                 </Button>
@@ -172,10 +189,12 @@ export default function ContactMe({ variant = 'button', label }: ContactMeProps)
                   </form>
                 </TabsContent>
               </Tabs>
+              </motion.div>
             </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          )}
+        </AnimatePresence>,
+        document.body,
+      )}
     </>
   );
 }

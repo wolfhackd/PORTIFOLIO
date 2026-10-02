@@ -1,6 +1,7 @@
 import { Link } from 'react-router';
 import { useEffect, useState } from 'react';
 import { MenuModal } from './menuModal';
+import ContactMe from './contactMe';
 import { cn } from '~/lib/utils';
 
 type MenubarHomeProps = {
@@ -62,12 +63,7 @@ const MenubarHome = ({ adaptive = false }: MenubarHomeProps) => {
           </Link>
         </nav>
         <div className="ml-auto flex items-center gap-2 sm:ml-0">
-          <Link
-            to="/inProgress"
-            className="inline-flex min-h-10 items-center bg-[#F5E642] px-3 text-sm font-black text-black transition-colors hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#F5E642]"
-          >
-            Fale comigo
-          </Link>
+          <ContactMe variant="menubar" label="Fale comigo" />
           <MenuModal iconClassName="text-current" />
         </div>
       </div>
