@@ -100,12 +100,14 @@ export const MenuModal = ({ iconClassName = 'text-[#EEF4ED]' }: MenuModalProps) 
                 </div>
               </CommandItem> */}
 
-              <Link to={"/lista-de-desejos"}>
+              <Link to="/lista-de-desejos">
                 <CommandItem>
                   <List className="mr-2 h-4 w-4" />
                   <div>
-                    <p className="font-medium">Lista de Desejos</p>
-                    <p className="text-xs text-muted-foreground">Confira a lista de coisas que eu quero fazer</p>
+                    <p className="font-medium">Bucket List</p>
+                    <p className="text-xs text-muted-foreground">
+                      Sonhos, experiências e metas que quero realizar
+                    </p>
                   </div>
                 </CommandItem>
               </Link>

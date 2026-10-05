@@ -4,8 +4,8 @@ import WhiteListPage from "~/pages/whiteList/WhiteListPage"
 
 export function meta() {
     return [
-        {title: 'Lista de Desejos'},
-        {name: "description", content:"Confira a lista de desejos e objetivos que eu tenho para o futuro e coisas que eu já realizei"}
+        {title: 'Bucket List'},
+        {name: "description", content:"Sonhos, experiências e metas que quero realizar"}
     ]
 }
 
