@@ -66,7 +66,7 @@ export const list: Project[] = [
     description:
       'O Portifolio Pessoal é um projeto que visa apresentar meu trabalho e habilidades como desenvolvedor.',
     images: ['portifolio_nwzyvr','portifolio_2_gxvdxr'],
-    link: 'https://github.com/wolfhackd/Portifolio-Pessoal',
+    link: 'https://github.com/wolfhackd/Portifolio',
     created: '2026-06-02T12:16:40.891',
     fastDescription:
     'Aplicação de apresentação de trabalho e habilidades.',
