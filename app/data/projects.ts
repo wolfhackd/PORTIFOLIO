@@ -59,4 +59,18 @@ export const list: Project[] = [
     overview:
     'O PulseChat é uma aplicação full stack desenvolvida para explorar comunicação em tempo real utilizando Socket.IO. O projeto conta com autenticação baseada em JWT, gerenciamento de salas, persistência de usuários e mensagens com Prisma e PostgreSQL, além de atualização em tempo real de mensagens, usuários online e indicadores de digitação. A aplicação é dividida em frontend e backend, ambos containerizados com Docker para facilitar a configuração e execução do ambiente.',
   },
+  {
+    id: 'd6272ecf-b565-4605-9cd8-31asdasdasdas6b8b5f',
+    technologyIds: ['typescript', 'react-router-dom', 'shadcn', 'prisma', 'postgresql', 'vite', 'tailwind-css'] satisfies TechnologyId[],
+    title: 'Portifolio Pessoal',
+    description:
+      'O Portifolio Pessoal é um projeto que visa apresentar meu trabalho e habilidades como desenvolvedor.',
+    images: ['portifolio_nwzyvr','portifolio_2_gxvdxr'],
+    link: 'https://github.com/wolfhackd/Portifolio-Pessoal',
+    created: '2026-06-02T12:16:40.891',
+    fastDescription:
+    'Aplicação de apresentação de trabalho e habilidades.',
+    overview:
+    'O Portifolio Pessoal é um projeto que visa apresentar meu trabalho e habilidades como desenvolvedor. A aplicação é dividida em frontend e backend, ambos containerizados com Docker para facilitar a configuração e execução do ambiente.',
+  },
 ];
